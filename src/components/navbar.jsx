@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import {
     SignInButton,
     SignUpButton,
@@ -8,13 +9,23 @@ import {
 } from '@clerk/nextjs'
 const Navbar = () => {
     return (
-        <div>
+        <div className='flex justify-center max-h-screen gap-6  text-center'>
             {/* Show the sign-in and sign-up buttons when the user is signed out */}
+            <button className=" text-2xl font-bold text-black cursor-pointer">
+                <Link href="/home">home</Link>
+            </button>
+            <button className=" text-2xl font-bold text-black cursor-pointer">
+                <Link href="/contact">Contact</Link>
+            </button>
             <SignedOut>
-                <SignInButton />
+                <SignInButton >
+                    <button className=" text-2xl font-bold text-black cursor-pointer">
+                        SignIn
+                    </button>
+                </SignInButton>
                 <SignUpButton>
-                    <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                        Sign Up
+                    <button className=" text-2xl font-bold text-black cursor-pointer">
+                        SignUp
                     </button>
                 </SignUpButton>
             </SignedOut>
